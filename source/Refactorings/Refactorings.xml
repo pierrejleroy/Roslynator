@@ -784,6 +784,11 @@
     </Syntaxes>
     <Scope>name</Scope>
   </Refactoring>
+  <Refactoring Id="ReplaceDefaultExpressionWithNullLiteralExpression" Title="Replace default expression with null literal expression" ExtensionVersion="0.0.0">
+    <Syntaxes>
+      <Syntax>default expression</Syntax>
+    </Syntaxes>
+  </Refactoring>
   <Refactoring Id="ReplaceDoStatementWithWhileStatement" Title="Replace do statement with while statement" ExtensionVersion="0.91.0">
     <Syntaxes>
       <Syntax>do statement</Syntax>

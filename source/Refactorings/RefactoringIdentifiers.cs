@@ -118,6 +118,7 @@ namespace Roslynator.CSharp.Refactorings
         public const string ReplaceConditionalExpressionWithIfElse = "ReplaceConditionalExpressionWithIfElse";
         public const string ReplaceConstantWithField = "ReplaceConstantWithField";
         public const string ReplaceCountWithLengthOrLengthWithCount = "ReplaceCountWithLengthOrLengthWithCount";
+        public const string ReplaceDefaultExpressionWithNullLiteralExpression = "ReplaceDefaultExpressionWithNullLiteralExpression";
         public const string ReplaceDoStatementWithWhileStatement = "ReplaceDoStatementWithWhileStatement";
         public const string ReplaceEmptyStringLiteralWithStringEmpty = "ReplaceEmptyStringLiteralWithStringEmpty";
         public const string ReplaceEqualsExpressionWithStringEquals = "ReplaceEqualsExpressionWithStringEquals";

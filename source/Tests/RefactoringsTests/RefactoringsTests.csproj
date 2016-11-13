@@ -56,6 +56,7 @@
     <Compile Include="RemoveUsingAliasDirectiveRefactoring.cs" />
     <Compile Include="ReplaceAsWithCastRefactoring.cs" />
     <Compile Include="ReplaceConditionalExpressionWithExpressionRefactoring.cs" />
+    <Compile Include="ReplaceDefaultExpressionWithNullLiteralExpressionRefactoring.cs" />
     <Compile Include="ReplaceEqualsExpressionWithStringEqualsRefactoring.cs" />
     <Compile Include="ReplaceIfElseWithConditionalExpressionRefactoring.cs" />
     <Compile Include="ReplaceIfElseWithSwitchRefactoring.cs" />

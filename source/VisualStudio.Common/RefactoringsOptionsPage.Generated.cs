@@ -124,6 +124,7 @@ namespace Roslynator.VisualStudio
             ReplaceConditionalExpressionWithIfElse = true;
             ReplaceConstantWithField = true;
             ReplaceCountWithLengthOrLengthWithCount = true;
+            ReplaceDefaultExpressionWithNullLiteralExpression = true;
             ReplaceDoStatementWithWhileStatement = true;
             ReplaceEmptyStringLiteralWithStringEmpty = true;
             ReplaceEqualsExpressionWithStringEquals = true;
@@ -280,6 +281,7 @@ namespace Roslynator.VisualStudio
             SetIsEnabled(RefactoringIdentifiers.ReplaceConditionalExpressionWithIfElse, ReplaceConditionalExpressionWithIfElse);
             SetIsEnabled(RefactoringIdentifiers.ReplaceConstantWithField, ReplaceConstantWithField);
             SetIsEnabled(RefactoringIdentifiers.ReplaceCountWithLengthOrLengthWithCount, ReplaceCountWithLengthOrLengthWithCount);
+            SetIsEnabled(RefactoringIdentifiers.ReplaceDefaultExpressionWithNullLiteralExpression, ReplaceDefaultExpressionWithNullLiteralExpression);
             SetIsEnabled(RefactoringIdentifiers.ReplaceDoStatementWithWhileStatement, ReplaceDoStatementWithWhileStatement);
             SetIsEnabled(RefactoringIdentifiers.ReplaceEmptyStringLiteralWithStringEmpty, ReplaceEmptyStringLiteralWithStringEmpty);
             SetIsEnabled(RefactoringIdentifiers.ReplaceEqualsExpressionWithStringEquals, ReplaceEqualsExpressionWithStringEquals);
@@ -1437,6 +1439,16 @@ namespace Roslynator.VisualStudio
         [Description("Syntax: member access expression\r\nScope: name")]
         [TypeConverter(typeof (EnabledDisabledConverter))]
         public bool ReplaceCountWithLengthOrLengthWithCount
+        {
+            get;
+            set;
+        }
+
+        [Category(RefactoringCategory)]
+        [DisplayName("Replace default expression with null literal expression")]
+        [Description("Syntax: default expression")]
+        [TypeConverter(typeof (EnabledDisabledConverter))]
+        public bool ReplaceDefaultExpressionWithNullLiteralExpression
         {
             get;
             set;

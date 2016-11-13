@@ -41,6 +41,7 @@
     <AssemblyOriginatorKeyFile>Roslynator.CSharp.Refactorings.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Refactorings\DefaultExpressionRefactoring.cs" />
     <Compile Include="Refactorings\GenerateOnEventMethodRefactoring.cs" />
     <Compile Include="Refactorings\AddToMethodInvocationRefactoring.cs" />
     <Compile Include="Refactorings\EventDeclarationRefactoring.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="RefactoringSettings.cs" />
     <Compile Include="Refactorings\ExtractTypeDeclarationToNewFileRefactoring.cs" />
     <Compile Include="Refactorings\MergeLocalDeclarationsRefactoring.cs" />
+    <Compile Include="Refactorings\ReplaceDefaultExpressionWithNullLiteralExpressionRefactoring.cs" />
     <Compile Include="Refactorings\ReplaceInterpolatedStringWithInterpolationExpressionRefactoring.cs" />
     <Compile Include="Refactorings\ReplacePropertyWithMethod\ReplacePropertyWithMethodSyntaxRewriter.cs" />
     <Compile Include="Refactorings\SelectedStatementsRefactoring.cs" />

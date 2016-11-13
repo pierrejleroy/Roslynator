@@ -113,6 +113,7 @@ namespace Roslynator.CSharp.Refactorings
             bool fPostfixUnaryExpression = false;
             bool fPrefixUnaryExpression = false;
             bool fAwaitExpression = false;
+            bool fDefaultExpression = false;
 
             bool fMemberDeclaration = false;
             bool fStatement = false;
@@ -404,6 +405,13 @@ namespace Roslynator.CSharp.Refactorings
                         {
                             await AwaitExpressionRefactoring.ComputeRefactoringsAsync(context, (AwaitExpressionSyntax)node).ConfigureAwait(false);
                             fAwaitExpression = true;
+                        }
+
+                        if (!fDefaultExpression
+                            && kind == SyntaxKind.DefaultExpression)
+                        {
+                            await DefaultExpressionRefactoring.ComputeRefactoringsAsync(context, (DefaultExpressionSyntax)node).ConfigureAwait(false);
+                            fDefaultExpression = true;
                         }
 
                         continue;
