@@ -41,6 +41,7 @@
     <AssemblyOriginatorKeyFile>Roslynator.CSharp.Refactorings.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="IntroduceLocalFromStatementThatReturnsValueRefactoring.cs" />
     <Compile Include="Refactorings\ConstructorDeclarationRefactoring.cs" />
     <Compile Include="Refactorings\LockStatementRefactoring.cs" />
     <Compile Include="Refactorings\CopyDocumentationCommentFromBaseMemberRefactoring.cs" />
