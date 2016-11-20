@@ -304,6 +304,11 @@ namespace Roslynator.CSharp
             return Token(SyntaxKind.EqualsToken);
         }
 
+        public static SyntaxToken ArrowToken()
+        {
+            return Token(SyntaxKind.EqualsGreaterThanToken);
+        }
+
         public static SyntaxToken ExclamationEqualsToken()
         {
             return Token(SyntaxKind.ExclamationEqualsToken);
@@ -327,6 +332,11 @@ namespace Roslynator.CSharp
         public static SyntaxToken CloseBracketToken()
         {
             return Token(SyntaxKind.CloseBracketToken);
+        }
+
+        public static SyntaxToken AsyncToken()
+        {
+            return Token(SyntaxKind.AsyncKeyword);
         }
 
         private static SyntaxToken Token(SyntaxKind syntaxKind)

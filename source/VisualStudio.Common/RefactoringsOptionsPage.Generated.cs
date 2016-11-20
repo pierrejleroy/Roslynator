@@ -141,6 +141,7 @@ namespace Roslynator.VisualStudio
             ReplaceIncrementOperatorWithDecrementOperator = true;
             ReplaceInterpolatedStringWithInterpolationExpression = true;
             ReplaceInterpolatedStringWithStringLiteral = true;
+            ReplaceMethodGroupWithLambda = true;
             ReplaceMethodInvocationWithElementAccess = true;
             ReplaceMethodWithProperty = false;
             ReplacePrefixOperatorWithPostfixOperator = true;
@@ -301,6 +302,7 @@ namespace Roslynator.VisualStudio
             SetIsEnabled(RefactoringIdentifiers.ReplaceIncrementOperatorWithDecrementOperator, ReplaceIncrementOperatorWithDecrementOperator);
             SetIsEnabled(RefactoringIdentifiers.ReplaceInterpolatedStringWithInterpolationExpression, ReplaceInterpolatedStringWithInterpolationExpression);
             SetIsEnabled(RefactoringIdentifiers.ReplaceInterpolatedStringWithStringLiteral, ReplaceInterpolatedStringWithStringLiteral);
+            SetIsEnabled(RefactoringIdentifiers.ReplaceMethodGroupWithLambda, ReplaceMethodGroupWithLambda);
             SetIsEnabled(RefactoringIdentifiers.ReplaceMethodInvocationWithElementAccess, ReplaceMethodInvocationWithElementAccess);
             SetIsEnabled(RefactoringIdentifiers.ReplaceMethodWithProperty, ReplaceMethodWithProperty);
             SetIsEnabled(RefactoringIdentifiers.ReplacePrefixOperatorWithPostfixOperator, ReplacePrefixOperatorWithPostfixOperator);
@@ -1615,6 +1617,16 @@ namespace Roslynator.VisualStudio
         [Description("Syntax: Interpolated string without any interpolation")]
         [TypeConverter(typeof (EnabledDisabledConverter))]
         public bool ReplaceInterpolatedStringWithStringLiteral
+        {
+            get;
+            set;
+        }
+
+        [Category(RefactoringCategory)]
+        [DisplayName("Replace method group with lambda")]
+        [Description("Syntax: method group")]
+        [TypeConverter(typeof (EnabledDisabledConverter))]
+        public bool ReplaceMethodGroupWithLambda
         {
             get;
             set;

@@ -29,6 +29,12 @@ namespace Roslynator.CSharp.Refactorings
                     ModifyExpressionRefactoring.ComputeRefactoring(context, argument.Expression, newTypes, semanticModel);
                 }
             }
+
+            if (context.IsRefactoringEnabled(RefactoringIdentifiers.ReplaceMethodGroupWithLambda)
+                && context.SupportsSemanticModel)
+            {
+                await ReplaceMethodGroupWithLambdaRefactoring.ComputeRefactoringAsync(context, argument).ConfigureAwait(false);
+            }
         }
     }
 }
