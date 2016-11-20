@@ -15,7 +15,7 @@ using static Roslynator.CSharp.CSharpFactory;
 
 namespace Roslynator.CSharp
 {
-    public static class co
+    public static class SyntaxExtensions
     {
         public static bool IsGetter(this AccessorDeclarationSyntax accessorDeclaration)
         {
@@ -531,6 +531,28 @@ namespace Roslynator.CSharp
             }
 
             return node;
+        }
+
+        public static IEnumerable<XmlElementSyntax> Exceptions(this DocumentationCommentTriviaSyntax documentationComment)
+        {
+            if (documentationComment == null)
+                throw new ArgumentNullException(nameof(documentationComment));
+
+            foreach (XmlNodeSyntax node in documentationComment.Content)
+            {
+                if (node.IsKind(SyntaxKind.XmlElement))
+                {
+                    var xmlElement = (XmlElementSyntax)node;
+
+                    XmlNameSyntax name = xmlElement.StartTag?.Name;
+
+                    if (name != null
+                        && string.Equals(name.LocalName.ValueText, "exception", StringComparison.Ordinal))
+                    {
+                        yield return xmlElement;
+                    }
+                }
+            }
         }
 
         public static TextSpan HeaderSpan(this EventDeclarationSyntax eventDeclaration)
