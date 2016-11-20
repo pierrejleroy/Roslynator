@@ -26,7 +26,8 @@ namespace Roslynator.CSharp.Refactorings
 
         private static async Task ComputeRefactoringAsync(RefactoringContext context, ExpressionSyntax expression)
         {
-            if (expression?.IsKind(SyntaxKind.IdentifierName, SyntaxKind.SimpleMemberAccessExpression) == true)
+            if (expression?.IsKind(SyntaxKind.IdentifierName, SyntaxKind.SimpleMemberAccessExpression) == true
+                && context.Span.IsContainedInSpanOrBetweenSpans(expression))
             {
                 SemanticModel semanticModel = await context.GetSemanticModelAsync().ConfigureAwait(false);
 
