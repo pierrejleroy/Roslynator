@@ -534,5 +534,30 @@ namespace Roslynator
         {
             return typeSymbol?.TypeKind == TypeKind.Enum;
         }
+
+        public static bool IsEnumWithFlags(ITypeSymbol typeSymbol, SemanticModel semanticModel)
+        {
+            if (typeSymbol == null)
+                throw new ArgumentNullException(nameof(typeSymbol));
+
+            if (semanticModel == null)
+                throw new ArgumentNullException(nameof(semanticModel));
+
+            if (typeSymbol.IsEnum())
+            {
+                INamedTypeSymbol flagsAttribute = null;
+
+                foreach (AttributeData attributeData in typeSymbol.GetAttributes())
+                {
+                    if (flagsAttribute == null)
+                        flagsAttribute = semanticModel.Compilation.GetTypeByMetadataName("System.FlagsAttribute");
+
+                    if (attributeData.AttributeClass.Equals(flagsAttribute))
+                        return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

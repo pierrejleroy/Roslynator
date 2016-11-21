@@ -50,6 +50,7 @@
     <Compile Include="Analyzers\RedundantEmptyLineAnalyzer.cs" />
     <Compile Include="CodeFixProviders\DestructorDeclarationCodeFixProvider.cs" />
     <Compile Include="CodeFixProviders\DeclareTypeInsideNamespaceCodeFixProvider.cs" />
+    <Compile Include="DiagnosticAnalyzers\BitwiseOperatorDiagnosticAnalyzer.cs" />
     <Compile Include="Refactorings\AddModifierRefactoring.cs" />
     <Compile Include="CodeFixProviders\DocumentCodeFixProvider.cs" />
     <Compile Include="CodeFixProviders\ClassDeclarationCodeFixProvider.cs" />
