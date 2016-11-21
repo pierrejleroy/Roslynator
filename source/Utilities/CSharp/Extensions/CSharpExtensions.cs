@@ -10,6 +10,37 @@ namespace Roslynator.CSharp
 {
     public static class CSharpExtensions
     {
+        public static bool HasConstantValue(
+            this SemanticModel semanticModel,
+            ExpressionSyntax expression,
+            CancellationToken cancellationToken = default(CancellationToken))
+        {
+            if (semanticModel == null)
+                throw new ArgumentNullException(nameof(semanticModel));
+
+            if (expression == null)
+                throw new ArgumentNullException(nameof(expression));
+
+            return semanticModel.GetConstantValue(expression, cancellationToken).HasValue;
+        }
+
+        public static bool HasConstantValue(
+            this SemanticModel semanticModel,
+            VariableDeclaratorSyntax variableDeclarator,
+            CancellationToken cancellationToken = default(CancellationToken))
+        {
+            if (semanticModel == null)
+                throw new ArgumentNullException(nameof(semanticModel));
+
+            if (variableDeclarator == null)
+                throw new ArgumentNullException(nameof(variableDeclarator));
+
+            ExpressionSyntax expression = variableDeclarator.Initializer?.Value;
+
+            return expression?.IsMissing == false
+                && semanticModel.GetConstantValue(expression, cancellationToken).HasValue;
+        }
+
         public static ISymbol GetSymbol(
             this SemanticModel semanticModel,
             ExpressionSyntax expression,

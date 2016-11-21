@@ -8,6 +8,20 @@ namespace Roslynator
 {
     public static class SemanticModelExtensions
     {
+        public static bool HasConstantValue(
+            this SemanticModel semanticModel,
+            SyntaxNode node,
+            CancellationToken cancellationToken = default(CancellationToken))
+        {
+            if (semanticModel == null)
+                throw new ArgumentNullException(nameof(semanticModel));
+
+            if (node == null)
+                throw new ArgumentNullException(nameof(node));
+
+            return semanticModel.GetConstantValue(node, cancellationToken).HasValue;
+        }
+
         public static ISymbol GetSymbol(
             this SemanticModel semanticModel,
             SyntaxNode node,

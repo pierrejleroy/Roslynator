@@ -441,7 +441,7 @@ namespace Roslynator
             }
         }
 
-        public static bool CanBeConstantValue(this ITypeSymbol typeSymbol)
+        public static bool SupportsConstantValue(this ITypeSymbol typeSymbol)
         {
             if (typeSymbol == null)
                 throw new ArgumentNullException(nameof(typeSymbol));
