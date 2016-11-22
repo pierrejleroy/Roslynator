@@ -1053,5 +1053,14 @@ namespace Roslynator.CSharp
             defaultSeverity: DiagnosticSeverity.Info,
             isEnabledByDefault: false
         );
+
+        public static readonly DiagnosticDescriptor UseStringIsNullOrEmptyMethod = new DiagnosticDescriptor(
+            id: DiagnosticIdentifiers.UseStringIsNullOrEmptyMethod,
+            title: "Use 'string.IsNullOrEmpty' method.",
+            messageFormat: "Consider using 'string.IsNullOrEmpty' method.",
+            category: DiagnosticCategories.General,
+            defaultSeverity: DiagnosticSeverity.Info,
+            isEnabledByDefault: true
+        );
     }
 }
